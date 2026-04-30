@@ -1,5 +1,8 @@
+"use client";
+import { useCart } from "@/context/CartContext";
 import styles from "./ProductCard.module.css";
 export default function ProductCard() {
+  const { addToCart } = useCart();
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
@@ -22,7 +25,7 @@ export default function ProductCard() {
       </div>
 
       <div className={styles.actions}>
-        <button>Add to cart</button>
+        <button onClick={addToCart}>Add to cart</button>
       </div>
     </article>
   );

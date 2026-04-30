@@ -1,5 +1,6 @@
 import Header from "@/components/header/Header";
 import "./globals.css";
+import { CartContextProvider } from "@/context/CartContext";
 
 export default function RootLayout({
   children,
@@ -9,8 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="container">{children}</main>
+        <CartContextProvider>
+          <Header />
+          <main className="container">{children}</main>
+        </CartContextProvider>
       </body>
     </html>
   );
