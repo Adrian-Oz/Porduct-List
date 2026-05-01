@@ -4,6 +4,8 @@ import styles from "./ProductCard.module.css";
 import { Product } from "@/types/Product";
 export default function ProductCard({ productData }: { productData: Product }) {
   const { addToCart } = useCart();
+
+  const promotion = productData.promotion ?? null;
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>

@@ -6,7 +6,9 @@ export default function ProductList({ data }: { data: Product[] }) {
     <section>
       <div className={styles.grid}>
         {data.map((product) => {
-          return <ProductCard productData={product} />;
+          return (
+            <ProductCard key={product.articleNumber} productData={product} />
+          );
         })}
       </div>
     </section>
