@@ -63,6 +63,7 @@
 
 .actions {
   margin-top: auto;
+  margin-left: auto;
 }
 
 .actions button {
@@ -70,6 +71,7 @@
   padding: var(--space-sm);
   border-radius: var(--radius-sm);
 
+  margin-right: auto;
   background: var(--color-primary);
   color: white;
   border: none;

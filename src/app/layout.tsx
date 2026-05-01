@@ -1,17 +1,19 @@
 import Header from "@/components/header/Header";
 import "./globals.css";
 import { CartContextProvider } from "@/context/CartContext";
-
-export default function RootLayout({
+import { getLogo } from "@/lib/api";
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const response = await getLogo(); // This
+  console.log(response);
   return (
     <html lang="en">
       <body>
         <CartContextProvider>
-          <Header />
+          <Header logo={response} />
           <main className="container">{children}</main>
         </CartContextProvider>
       </body>
