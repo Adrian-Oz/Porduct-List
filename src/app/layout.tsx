@@ -7,8 +7,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const response = await getLogo(); // This
-  console.log(response);
+  const response = await getLogo();
+  // console.log(response);
   return (
     <html lang="en">
       <body>

@@ -1,4 +1,4 @@
-import { ApiResponse, Image, Product } from "@/types/Product";
+import { Image, Product } from "@/types/product";
 
 const API_URL = process.env.API_URL;
 const API_KEY = process.env.API_KEY;
