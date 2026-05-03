@@ -14,6 +14,7 @@ export async function getProductsData(): Promise<ApiResponse> {
     headers: {
       "x-api-key": API_KEY,
     },
+    next: { revalidate: 60 },
   });
 
   if (!res.ok) {

@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 type CartContextType = {
   cartCount: number;
   addToCart: (articleNumber: string) => void;
-  isLoading: string | null;
+  articleNumber: string | null;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -15,24 +15,24 @@ export function CartContextProvider({
   children: React.ReactNode;
 }) {
   const [cartCount, setCartCount] = useState(0);
-  const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [articleNumber, setArticleNumber] = useState<string | null>(null);
 
   async function addToCart(articleNumber: string) {
-    if (isLoading) return;
+    if (articleNumber) return;
 
-    setIsLoading(articleNumber);
+    setArticleNumber(articleNumber);
     try {
       await new Promise((resolve) => {
         setTimeout(resolve, 500);
       });
       setCartCount((prev) => prev + 1);
     } finally {
-      setIsLoading(null);
+      setArticleNumber(null);
     }
   }
 
   return (
-    <CartContext.Provider value={{ cartCount, addToCart, isLoading }}>
+    <CartContext.Provider value={{ cartCount, addToCart, articleNumber }}>
       {children}
     </CartContext.Provider>
   );

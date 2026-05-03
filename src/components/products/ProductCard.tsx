@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function ProductCard({ productData }: { productData: Product }) {
-  const { addToCart, isLoading } = useCart();
+  const { addToCart, articleNumber } = useCart();
 
   const finalPrice = productData.promotion
     ? getDiscountedPrice({
@@ -70,7 +70,7 @@ export default function ProductCard({ productData }: { productData: Product }) {
             addToCart(productData.articleNumber);
           }}
         >
-          {isLoading === productData.articleNumber
+          {articleNumber === productData.articleNumber
             ? "Adding..."
             : "Add to cart"}
         </Button>
