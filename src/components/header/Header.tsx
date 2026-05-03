@@ -3,15 +3,16 @@ import styles from "@/components/header/Header.module.css";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { Image } from "@/types/product";
+import { Image as ImageType } from "@/types/product";
+import Image from "next/image";
 
-export default function Header({ logo }: { logo: Image }) {
+export default function Header({ logo }: { logo: ImageType }) {
   const { cartCount } = useCart();
 
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <img src={logo.url} alt={logo.altText} />
+        <Image width={96} height={48} src={logo.url} alt={logo.altText} />
       </Link>
 
       <button className={styles.cart}>

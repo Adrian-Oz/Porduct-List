@@ -4,6 +4,8 @@ import styles from "./ProductCard.module.css";
 import { Product } from "@/types/product";
 import Button from "../ui/Button";
 import { getDiscountedPrice } from "./helpers";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function ProductCard({ productData }: { productData: Product }) {
   const { addToCart } = useCart();
@@ -15,15 +17,24 @@ export default function ProductCard({ productData }: { productData: Product }) {
       })
     : productData.price;
 
+  const [imageUrl, setImageUrl] = useState(productData.image.url);
+
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
-        <img
-          src={productData.image.url}
+        <Image
+          fill
+          sizes="(max-width: 768px) 100vw, 25vw"
+          src={imageUrl}
           alt={productData.image.altText}
           className={styles.image}
+          onError={() => {
+            setImageUrl("/placeholder_view_vector.png");
+          }}
         />
-        <img
+        <Image
+          width={96}
+          height={48}
           src={productData.brandLogo}
           alt={productData.brandName}
           className={styles.brandLogo}
