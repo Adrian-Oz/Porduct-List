@@ -45,25 +45,26 @@ export default function ProductCard({ productData }: { productData: Product }) {
         <p className={styles.brand}>{productData.brandName}</p>
         <h3>{productData.title}</h3>
         <p className={styles.description}>{productData.description}</p>
-
-        <div className={styles.price}>
-          {productData.promotion ? (
-            <>
-              <span className={styles.discounted}>{`${finalPrice}$`}</span>
-
-              <span className={styles.oldPrice}>{`${productData.price}$`}</span>
-
-              <span className={styles.badge}>
-                -{productData.promotion.percentage}%
-              </span>
-            </>
-          ) : (
-            <span>{`${productData.price}$`}</span>
-          )}
-        </div>
       </div>
 
       <div className={styles.actions}>
+        <div className={styles.priceContainer}>
+          {productData.promotion ? (
+            <>
+              <div className={styles.mainPrice}>
+                <span className={styles.discounted}>{`${finalPrice}$`}</span>
+
+                <span className={styles.badge}>
+                  -{productData.promotion.percentage}%
+                </span>
+              </div>
+              <span className={styles.oldPrice}>{`${productData.price}$`}</span>
+            </>
+          ) : (
+            <span className={styles.price}>{`${productData.price}$`}</span>
+          )}
+        </div>
+
         <Button
           onClick={() => {
             addToCart(productData.articleNumber);

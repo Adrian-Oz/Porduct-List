@@ -19,6 +19,7 @@
   --color-border: #2a2f3a;
 
   /* Spacing */
+  --space-xxs: 0.125rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -29,12 +30,15 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 20px;
 
   /* Font size */
   --font-size-sm: 0.85rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
 
+  --font-weight-light: 200;
   --font-weight-normal: 400;
   --font-weight-bold: 600;
 }

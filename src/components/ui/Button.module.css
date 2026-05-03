@@ -1,9 +1,12 @@
 .button {
-  width: 100%;
+  width: 6rem;
+  height: 2.5rem;
   padding: var(--space-sm);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
 
-  margin-right: auto;
+  background: white;
+  /* color: black; */
+  /* font-weight: var(--font-size-bold); */
   background: var(--color-primary);
   color: white;
   border: none;

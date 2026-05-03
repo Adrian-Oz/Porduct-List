@@ -16,9 +16,6 @@ export function CartContextProvider({
 }) {
   const [cartCount, setCartCount] = useState(0);
   const [isLoading, setIsLoading] = useState<string | null>(null);
-  // function addToCart() {
-  //   setCartCount((prev) => prev + 1);
-  // }
 
   async function addToCart(articleNumber: string) {
     if (isLoading) return;
