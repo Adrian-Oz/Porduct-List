@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: start;
+  position: relative;
+}
+
+/* I could calculate actual values but creating layout wasnt part of the task and i have only done it to display list better */
+
+.filters {
+  background-color: var(--color-surface);
+  width: 250px;
+  padding: var(--space-md);
+  height: 880px;
+  position: sticky;
+  top: 110px;
+  border-radius: var(--radius-xl);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .filters {
+    display: flex;
+  }
+}
