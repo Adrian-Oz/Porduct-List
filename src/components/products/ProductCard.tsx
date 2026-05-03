@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function ProductCard({ productData }: { productData: Product }) {
-  const { addToCart } = useCart();
+  const { addToCart, isLoading } = useCart();
 
   const finalPrice = productData.promotion
     ? getDiscountedPrice({
@@ -64,7 +64,15 @@ export default function ProductCard({ productData }: { productData: Product }) {
       </div>
 
       <div className={styles.actions}>
-        <Button onClick={addToCart}>Add to cart</Button>
+        <Button
+          onClick={() => {
+            addToCart(productData.articleNumber);
+          }}
+        >
+          {isLoading === productData.articleNumber
+            ? "Adding..."
+            : "Add to cart"}
+        </Button>
       </div>
     </article>
   );
