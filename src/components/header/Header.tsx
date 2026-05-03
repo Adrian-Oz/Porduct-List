@@ -3,7 +3,7 @@ import styles from "@/components/header/Header.module.css";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { Image } from "@/types/Product";
+import { Image } from "@/types/product";
 
 export default function Header({ logo }: { logo: Image }) {
   const { cartCount } = useCart();

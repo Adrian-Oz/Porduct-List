@@ -14,6 +14,7 @@ export function CartContextProvider({
   children: React.ReactNode;
 }) {
   const [cartCount, setCartCount] = useState(0);
+
   function addToCart() {
     setCartCount((prev) => prev + 1);
   }

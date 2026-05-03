@@ -2,16 +2,8 @@
 import { useCart } from "@/context/CartContext";
 import styles from "./ProductCard.module.css";
 import { Product } from "@/types/product";
-
-function getDiscountedPrice({
-  price,
-  percentage,
-}: {
-  price: number;
-  percentage: number;
-}) {
-  return (price * (1 - percentage / 100)).toFixed(2);
-}
+import Button from "../ui/Button";
+import { getDiscountedPrice } from "./helpers";
 
 export default function ProductCard({ productData }: { productData: Product }) {
   const { addToCart } = useCart();
@@ -61,7 +53,7 @@ export default function ProductCard({ productData }: { productData: Product }) {
       </div>
 
       <div className={styles.actions}>
-        <button onClick={addToCart}>Add to cart</button>
+        <Button onClick={addToCart}>Add to cart</Button>
       </div>
     </article>
   );
