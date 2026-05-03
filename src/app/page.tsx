@@ -1,8 +1,8 @@
 import ProductList from "@/components/products/ProductList";
-import { getProducts } from "@/lib/api";
+import { getProductsData } from "@/lib/api";
 
 export default async function Home() {
-  const products = await getProducts();
+  const data = await getProductsData();
 
-  return <ProductList data={products} />;
+  return <ProductList data={data.products} />;
 }
